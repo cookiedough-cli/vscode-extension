@@ -1,0 +1,66 @@
+{
+  	"name": "cookiedough-vscode",
+	"displayName": "Cookiedough VSCode",
+	"description": "cookiedough tools for vscode",
+	"version": "0.0.1",
+	"icon": "images/cookiedough.png",
+	"engines": {
+		"vscode": "^1.69.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cookiedough-cli/vscode-extension"
+	},
+	"categories": [
+		"Extension Packs",
+		"Other"
+	],
+	"activationEvents": [
+        "onCommand:cookiedough-vscode.hello"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "cookiedough",
+				"extensions": [
+					".cookie",
+					".cookiedough",
+					".cookiedoughrc",
+					".crumbs",
+					".cookierc",
+					".flavor"
+				],
+				"icon": {
+					"dark": "./images/cookiedough.png",
+					"light": "./images/cookiedough.png"
+				},
+				"configuration": "./cookiedough.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cookiedough",
+				"scopeName": "source.cookiedough",
+				"path": "./syntaxes/cd.json"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "yarn run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+        "@types/vscode": "^1.69.0",
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.1",
+        "@types/node": "16.x",
+        "eslint": "^8.18.0",
+        "glob": "^8.0.3",
+        "mocha": "^10.0.0",
+        "typescript": "^4.7.4",
+        "@vscode/test-electron": "^2.1.5"
+    }
+
+}

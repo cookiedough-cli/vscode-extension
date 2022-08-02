@@ -2,7 +2,43 @@
   	"name": "cookiedough-vscode",
 	"displayName": "Cookiedough VSCode",
 	"description": "cookiedough tools for vscode",
-	"version": "0.0.2",
+	"funding": "https://github.com/webpuppy/partners",
+	"contributors": [
+		{
+			"name": "abschill",
+			"url": "https://blog.abschill.com"
+		}
+	],
+	"eslintConfig": {
+		"env": {
+			"browser": false,
+			"commonjs": true,
+			"es6": true,
+			"node": true,
+			"mocha": true
+		},
+		"parserOptions": {
+			"ecmaVersion": 2018,
+			"ecmaFeatures": {
+				"jsx": true
+			},
+			"sourceType": "module"
+		},
+		"rules": {
+			"no-const-assign": "warn",
+			"no-this-before-super": "warn",
+			"no-undef": "warn",
+			"no-unreachable": "warn",
+			"no-unused-vars": "warn",
+			"constructor-super": "warn",
+			"valid-typeof": "warn"
+		}
+	},
+	"packageManager": "yarn@1.22.19",
+	"sponsor": {
+		"url": "https://webpuppy.io/partners"
+	},
+	"version": "0.0.3",
 	"license": "AGPL-3.0",
 	"icon": "images/cookiedough.png",
 	"author": {
@@ -22,7 +58,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:cookiedough-vscode.hello"
+		"onStartupFinished"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -34,10 +70,14 @@
 					"light": "./images/cookiedough.png"
 				},
 				"filenamePatterns": [
-					"cookiedough.json"
+					"cookiedough.json",
+					"flavor.json",
+					"doughmap.json"
 				],
 				"filenames": [
-					"cookiedough.json"
+					"cookiedough.json",
+					"flavor.json",
+					"doughmap.json"
 				],
 				"mimetypes": [
 					"application/json"

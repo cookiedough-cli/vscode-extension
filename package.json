@@ -2,8 +2,14 @@
   	"name": "cookiedough-vscode",
 	"displayName": "Cookiedough VSCode",
 	"description": "cookiedough tools for vscode",
-	"version": "0.0.1",
+	"version": "0.0.2",
+	"license": "AGPL-3.0",
 	"icon": "images/cookiedough.png",
+	"author": {
+		"name": "abschill",
+		"url": "https://blog.abschill.com"
+	},
+	"publisher": "abschill",
 	"engines": {
 		"vscode": "^1.69.0"
 	},
@@ -23,18 +29,19 @@
 		"languages": [
 			{
 				"id": "cookiedough",
-				"extensions": [
-					".cookie",
-					".cookiedough",
-					".cookiedoughrc",
-					".crumbs",
-					".cookierc",
-					".flavor"
-				],
 				"icon": {
 					"dark": "./images/cookiedough.png",
 					"light": "./images/cookiedough.png"
 				},
+				"filenamePatterns": [
+					"cookiedough.json"
+				],
+				"filenames": [
+					"cookiedough.json"
+				],
+				"mimetypes": [
+					"application/json"
+				],
 				"configuration": "./cookiedough.json"
 			}
 		],
